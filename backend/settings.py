@@ -86,7 +86,7 @@ WSGI_APPLICATION = "backend.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "IMS",
+        "NAME": "FoodOrder",
         "HOST":"localhost",
         "PORT":"5432",
         "USER":"postgres",
