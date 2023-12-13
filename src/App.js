@@ -2,7 +2,7 @@ import "./App.css";
 import React from "react";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import Login from "./components/Login/Login";
-import Homepage from "./components/Home/Homepage";
+import Homepage from "./pages/Homepage";
 import Register from "./components/Register/Register";
 import Dashboard from "./components/Dashboard/Dashboard";
 function App() {
