@@ -13,6 +13,33 @@
   }
   
   .animate-slide {
-    animation: slide 20s linear infinite; /* Adjust the animation duration as needed */
+    animation: slide 25s linear infinite; /* Slower animation for better readability */
+  }
+  
+  /* Mobile-specific adjustments */
+  @media (max-width: 639px) {
+    .animate-slide {
+      animation: slide 30s linear infinite; /* Even slower on mobile */
+      font-size: 1rem; /* Ensure text fits on small screens */
+      line-height: 1.2;
+    }
+  }
+  
+  @media (max-width: 479px) {
+    .animate-slide {
+      animation: slide 35s linear infinite; /* Slowest on very small screens */
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Improve animation performance */
+  .animate-slide {
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+  
+  /* Pause animation on hover for better UX */
+  .animate-slide:hover {
+    animation-play-state: paused;
   }
   

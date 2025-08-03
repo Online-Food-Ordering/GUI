@@ -27,17 +27,17 @@ const HomePage = () => {
 
   return (
     <Layout>
-      <div className="bg-image-container p-8 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-semibold mb-6 text-center text-black">
+      <div className="bg-image-container p-4 sm:p-6 lg:p-8 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6 text-center text-black">
           Order Delicious Food Online
         </h1>
-        <p className="text-black mb-6 text-center">
+        <p className="text-black mb-4 sm:mb-6 text-center text-sm sm:text-base">
           Choose from a variety of cuisines and enjoy doorstep delivery.
         </p>
 
 
-          <div className="grid grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {images.map((image, index) => (
               <div key={index} className="relative">
                 <img
@@ -49,31 +49,31 @@ const HomePage = () => {
                   onMouseEnter={() => handleImageHover(index)}
                   onMouseLeave={handleImageLeave}
                 />
-                <div className="link-container">
+                <div className="link-container flex-col sm:flex-row gap-2 sm:gap-0">
                   <Link
                     to={`/menu${index + 1}`}
-                    className="link-button link-menu"
+                    className="link-button link-menu text-xs sm:text-sm flex-1"
                   >
                     View Menu
                   </Link>
                   {isLoggedIn() ? (
                     <Link
                       to={`/order${index + 1}`}
-                      className="link-button link-order"
+                      className="link-button link-order text-xs sm:text-sm flex-1"
                     >
                       Order Now
                     </Link>
                   ) : (
-                    <div>
-                      <p className="text-gray">You need to</p>
-                      <Link to="/login" className="text-blue hover-underline mx-2">
+                    <div className="text-center sm:text-left mt-2 sm:mt-0">
+                      <p className="text-gray text-xs sm:text-sm">You need to</p>
+                      <Link to="/login" className="text-blue hover-underline mx-1 text-xs sm:text-sm">
                         login
                       </Link>
-                      <span className="text-gray">or</span>
-                      <Link to="/register" className="text-blue hover-underline mx-2">
+                      <span className="text-gray text-xs sm:text-sm">or</span>
+                      <Link to="/register" className="text-blue hover-underline mx-1 text-xs sm:text-sm">
                         register
                       </Link>
-                      <span className="text-gray">to order.</span>
+                      <span className="text-gray text-xs sm:text-sm">to order.</span>
                     </div>
                   )}
                 </div>
@@ -81,13 +81,13 @@ const HomePage = () => {
             ))}
           </div>
 
-          <div className="mt-8 text-center">
-            <p className="text-gray">New to our platform?</p>
-            <Link to="/register" className="text-blue hover-underline mx-2">
+          <div className="mt-6 sm:mt-8 text-center">
+            <p className="text-gray text-sm sm:text-base">New to our platform?</p>
+            <Link to="/register" className="text-blue hover-underline mx-2 text-sm sm:text-base">
               Register here
             </Link>
-            <span className="text-gray">or</span>
-            <Link to="/login" className="text-blue hover-underline mx-2">
+            <span className="text-gray text-sm sm:text-base">or</span>
+            <Link to="/login" className="text-blue hover-underline mx-2 text-sm sm:text-base">
               Login here
             </Link>
           </div>
